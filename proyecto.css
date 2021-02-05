@@ -1,0 +1,169 @@
+body{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.container-global{
+    background-color: #ffb2dd;
+    width: 100%;
+}
+
+.box-inicial {
+    background-color: #b64fc8;
+    height: 20vh;
+    display: flex;
+    text-align:center;
+    flex-direction: column;
+}
+
+.tittle-generador {
+    font-family: 'Yusei Magic', sans-serif;
+    color: #ffffff;
+}
+
+
+.button-image .button-text .button-nocturno{
+    justify-content: space-around;
+    margin: 5px 10px; 
+    /* outline: none; 
+    border: transparent;
+    background-color: #b64fc8; */
+}
+/* 
+.pestaña-texto .pestaña-imagen{
+    text-decoration: none;
+    border: transparent;
+    background-color: #b64fc8;
+} */
+
+/* *****************Sector Hover***************** */
+
+.button-image:hover{
+ background-color: #ff79ff;
+ color: white;
+}
+.button-text:hover{
+    background-color: #ff79ff;
+    color: white; 
+}
+
+.button-nocturno:hover{
+    background-color: #ff79ff;
+    color: white; 
+}
+
+
+
+/* ***********CONTAINER STYLE******************* */
+
+
+
+.div-container{
+    width: 40vw;
+    height: 80vh;
+    margin: 25px auto;
+
+}
+
+.p-text{
+    display: flex;
+    background-color: #805acb;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    margin: 0px;
+}
+
+.imagen-meme{
+    width: 40vw;
+    height: 300px;
+    background-color: black;
+} 
+
+.p-text-botton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8c9eff;
+    height: 8vh;
+    margin: 0px;
+}
+
+.tittle-two{
+    background-color: burlywood;
+}
+
+.button-descargar{
+    position: relative;
+    left: 38%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #c94f7c;
+    
+}
+
+.letra-button{
+    font-family: 'Hachi Maru Pop', cursive;
+}
+
+/*******************************************/
+.box-aside{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    background-color: #ff8a80;
+}
+
+
+.tittle-aside{
+    display: flex;
+    justify-content: center;
+}
+
+.tittle-box-aside{
+    margin-left: 10px;
+}
+
+.panel-control-input{
+    margin: 5px;
+    width: 90%;
+    height: 25px;
+}
+
+
+.box-aside-color-select{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.panel-control-column{
+    width: 80%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.box-aside-filtros{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.button-filtro{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+/********************TEXTO*************************/
+
+.pestañita-texto{
+    display: none
+};

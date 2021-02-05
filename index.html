@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./proyecto.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!--fuente de tittle-one-->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>Creador de memes</title>
+    <!--fuente button descargar-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-global">
+<!--*****************HEADER****************-->    
+    <header class="box-inicial">
+        <h1 class="tittle-generador">Generador de memes</h1>
+        <nav>    
+            <button class="button-image" id="pestaña-imagen">
+                <i class="fas fa-image">
+                    Imagen
+                </i>
+            </button>
+            <button id="pestaña-texto" class="button-text">
+                <i class="fas fa-font">
+                    Texto
+                </i>
+            </button>
+            <button id="modo-nocturno" class="button-nocturno">
+                <i class="fas fa-cloud-moon"> Modo nocturno</i>
+            </button>
+        </nav>
+    </header>
+
+
+<!--**************CONTAINER PRINCIPAL**************-->    
+    
+        <main>
+            <div class="div-container">
+                <p class="p-text">
+                    TOP TEXT
+                </p>
+                <div>
+                    <div class="imagen-meme"></div>
+                </div>
+                <p class="p-text-botton">
+                    BOTTON TEXT
+                </p>
+
+                <Button class="button-descargar">
+                    <i class="fas fa-download" class="letra-button"> Descargar meme</i>
+                </Button>
+            </div>
+        </main>
+    </div>
+    <!--********************PESTAÑA IMAGEN********************-->    
+    <aside class= "box-aside">
+            <section id="pestañita-imagen" class="section-image">
+                <h2 class="tittle-aside">Imagen</h2>
+                <div>
+                    <h3 class="tittle-box-aside">URL</h3>
+                    <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de la imagen">
+                </div>
+                <div>
+                    <h3 class="tittle-box-aside">Fondo</h3>
+                <div class="box-aside-color-select">
+                <div>
+                        <input aria-label="Color de fondo de la imagen" type="color" id="" value="#fffff" placeholder="#FFFFF"
+                        class="color-ffff" ><span>#FFFFF</span>
+                </div>
+                <div class="panel-control-column">
+                        <select aria-label="Modo de mezcla de fondo de imagen" id="" class="panel-control-input">
+                            <option value="unset">Ninguno</option>
+                            <option value="lighten">Aclarar</option>
+                            <option value="darken">Oscurecer</option>
+                            <option value="difference">Diferencia</option>
+                            <option value="Luminosity">Luminosidad</option>
+                            <option value="multiply">Multiplicar</option>
+                        </select>
+                </div>
+                </div>
+<!-- ****************************************************** -->                
+                    <h3 class="tittle-box-aside">Filtros</h3>
+
+                <div class="box-aside-filtros">
+                    <label for="brillo">Brillo</label>
+                    <input type="range" id="brillo" min="0" max="1" step="0.1" value="1">
+                    <label for="opacidad">Opacidad</label>
+                    <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1">
+                    <label for="contraste">Contraste</label>
+                    <input type="range" id="contraste" min="100%" max="1000%" step="1" value="100%">
+                    <label for="desenfoque">Desenfoque</label>
+                    <input type="range" id="desenfoque" min="0px" max="10px" step="0.1px" value="0px">
+                    <label for="escala-de-grises">Escala de grises</label>
+                    <input type="range" id="escala-de-grises" min="0%" max="100%" step="1%" value="0%">
+                    <label for="sepia">Sepia</label>
+                    <input type="range" id="sepia" min="0%" max="100%" step="1%" value="0%">
+                    <label for="hue">Hue</label>
+                    <input type="range" id="hue" min="0deg" max="359deg" step="1deg" value="0deg">
+                    <label for="saturado">Saturado</label>
+                    <input type="range" id="saturado
+                    " min="100%" max="1000%" step="10%" value="100%">
+                    <label for="negativo">Negativo</label>
+                    <input type="range" id="negativo" min="0" max="1" step="0.1" value="1">
+                </div>    
+                <button class="button-filtro">Reestablecer Filtros</button>
+            </div>
+        </section>    
+<!-- *************************************************** -->
+        <section id="pestañita-texto" class="pestañita-texto">
+            <div class="box-texto">
+                <h3>
+                    TEXTO
+                <h3>
+                <article>
+                    <label for="text-superior">Texto superior</label>
+                    <input type="text" id="text-superior"
+                    placeholder="TOP TEXT">
+                    <br>
+                    <input type="checkbox" name="text-superior" id="text-superior">
+                    <label for="">Sin texto superior</label>
+                </article>
+                <article>
+                    <label for="text-superior">Texto inferior</label>
+                    <input type="text" id="text-superior">
+                    <br>
+                    <input type="checkbox" name="text-superior" id="text-superior">
+                    <label for="">Sin texto inferior</label>
+                </article>
+                <article>
+                    <h3>Fuente</h3>
+                    <select name="" id=""></select>
+                    
+
+                </article>    
+
+
+            </div>
+
+
+        </section>
+    </aside>
+    
+    
+    <script src="./proyecto.js"></script>
+</body>
+</html>
