@@ -13,64 +13,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 </head>
-<body>
-
-<div class="container-global">
+<body class="cambiar-modo-oscuro">
+    <div class="container-global">
 <!--*****************HEADER****************-->    
-    <header class="box-inicial">
-        <h1 class="tittle-generador">Generador de memes</h1>
-        <nav>    
-            <button class="button-image" id="pestaña-imagen">
+
+        <header class="box-inicial">
+            <h1 class="tittle-generador">Generador de memes</h1>
+            <nav class="button-gral">    
+            <button class="button-image" id="btn-imagen">
                 <i class="fas fa-image">
                     Imagen
                 </i>
             </button>
-            <button id="pestaña-texto" class="button-text">
+            <button id="btn-texto" class="button-text">
                 <i class="fas fa-font">
                     Texto
                 </i>
             </button>
-            <button id="modo-nocturno" class="button-nocturno">
-                <i class="fas fa-cloud-moon"> Modo nocturno</i>
+            <button id="modo-oscuro" class="button-nocturno" onclick="cambioModoOscuro()">
+                <i class="fas fa-cloud-moon"></i> Modo nocturno</i>
             </button>
-        </nav>
-    </header>
-
-
+            <button id="modo-claro" class="button-claro" onclick="cambiarModoClaro()">
+                <i class="fas fa-cloud-moon"> Modo claro</i>
+            </button>
+            </nav>
+        </header>
 <!--**************CONTAINER PRINCIPAL**************-->    
     
-        <main>
+        <main class= "containerTextTopBottonText">
             <div class="div-container">
                 <p class="p-text">
                     TOP TEXT
                 </p>
                 <div>
-                    <div class="imagen-meme"></div>
-                </div>
+                    <div class="imagen-meme" id="imagen-meme">                  </div>
                 <p class="p-text-botton">
                     BOTTON TEXT
                 </p>
-
+                </div>
                 <Button class="button-descargar">
-                    <i class="fas fa-download" class="letra-button"> Descargar meme</i>
+                    <i class="fas fa-download" class="letra-button">Descargar meme</i>
                 </Button>
             </div>
         </main>
     </div>
     <!--********************PESTAÑA IMAGEN********************-->    
-    <aside class= "box-aside">
-            <section id="pestañita-imagen" class="section-image">
+        
+        <aside class= "box-aside">
+            <button class="icon-cruz">
+                <i class="fas fa-times"></i>
+            </button>
+            <section id="solapa-imagen" class="section-image">
                 <h2 class="tittle-aside">Imagen</h2>
                 <div>
                     <h3 class="tittle-box-aside">URL</h3>
                     <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de la imagen">
                 </div>
+                <div class="box-madre-imagen">
                 <div>
                     <h3 class="tittle-box-aside">Fondo</h3>
                 <div class="box-aside-color-select">
-                <div>
-                        <input aria-label="Color de fondo de la imagen" type="color" id="" value="#fffff" placeholder="#FFFFF"
-                        class="color-ffff" ><span>#FFFFF</span>
+                <div class="color-ffff">
+                        <input aria-label="Color de fondo de la imagen" type="color" id="" value="#fffff">
+                        <span>#FFFFF</span>
                 </div>
                 <div class="panel-control-column">
                         <select aria-label="Modo de mezcla de fondo de imagen" id="" class="panel-control-input">
@@ -83,9 +88,8 @@
                         </select>
                 </div>
                 </div>
-<!-- ****************************************************** -->                
+                </div>                
                     <h3 class="tittle-box-aside">Filtros</h3>
-
                 <div class="box-aside-filtros">
                     <label for="brillo">Brillo</label>
                     <input type="range" id="brillo" min="0" max="1" step="0.1" value="1">
@@ -107,44 +111,78 @@
                     <label for="negativo">Negativo</label>
                     <input type="range" id="negativo" min="0" max="1" step="0.1" value="1">
                 </div>    
-                <button class="button-filtro">Reestablecer Filtros</button>
-            </div>
-        </section>    
-<!-- *************************************************** -->
-        <section id="pestañita-texto" class="pestañita-texto">
-            <div class="box-texto">
-                <h3>
-                    TEXTO
-                <h3>
-                <article>
-                    <label for="text-superior">Texto superior</label>
-                    <input type="text" id="text-superior"
-                    placeholder="TOP TEXT">
-                    <br>
-                    <input type="checkbox" name="text-superior" id="text-superior">
-                    <label for="">Sin texto superior</label>
-                </article>
-                <article>
-                    <label for="text-superior">Texto inferior</label>
-                    <input type="text" id="text-superior">
-                    <br>
-                    <input type="checkbox" name="text-superior" id="text-superior">
-                    <label for="">Sin texto inferior</label>
-                </article>
-                <article>
-                    <h3>Fuente</h3>
-                    <select name="" id=""></select>
-                    
-
-                </article>    
-
-
-            </div>
-
-
-        </section>
-    </aside>
+                    <button class="button-filtro">Reestablecer Filtros</button>
+                </div>
+            </section>    
+    <!-- ***********************PESTAÑA TEXTO**************************** -->
     
+            <section id="solapa-texto" class="section-texto">
+                <div class="box-texto">
+                    <h3>
+                        TEXTO
+                    <h3>
+                    <article box-article-text>
+                        <label for="text-superior">Texto superior</label>
+                        <input type="text" id="text-superior"
+                        placeholder="TOP TEXT">
+                        <br>
+                        <input type="checkbox" name="text-superior" id="text-superior">
+                        <label for="">Sin texto superior</label>
+                    </article>
+                    <article>
+                        <label for="text-superior">Texto inferior</label>
+                        <input type="text" id="text-superior" placeholder="BOTTON TEXT">
+                        <br>
+                        <input type="checkbox" name="text-superior" id="text-superior">
+                        <label for="">Sin texto inferior</label>
+                    </article>
+                    <article>
+                        <h3>Fuente</h3>
+                        <select name="" id="">
+                            <option value="arial">Arial</option>
+                            <option value="algerian">Algerian</option>
+                        </select>
+                        <label for="tamaño-letra"></label>
+                        <input type="number" id="tamaño-letra" value="40" min="10" max="60">
+                        <button>
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button>
+                            <i class="fas fa-align-center"></i>
+                        </button>
+                        <button>
+                            <i class="fas fa-align-right"></i>
+                        </button>
+
+                        <label for="color-letra">Color</label>
+                        <input type="color" id="color-letra">
+
+                        <label for="color-fondo">Fondo</label>
+                        <input type="color" id="color-fondo">
+
+                        <input type="checkbox" name="fondo-transparente" id="fondo-transparente">
+                        <label for="">Fondo transparente</label>
+                        
+                        <label for="">Contorno</label>
+                        <button>Ninguno</button>
+                        <button>Claro</button>
+                        <button>Oscuro</button>
+
+                        <label for="espaciado-de-texto">Espaciado</label>
+                        <input type="number" id="espaciado-de-texto" value="35" min="5" max="55">
+
+                        <label for="Interlineado-de-texto">Interlineado</label>
+                        <select name="Interlineado-de-texto" id="Interlineado-de-texto">
+                            <option value="0.8">0.8</option>
+                            <option value="1.0">1.0</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2.0">2.0</option>
+                        </select>
+                    </article>    
+                </div>
+            </section>
+        </aside>
     
     <script src="./proyecto.js"></script>
 </body>

@@ -5,72 +5,103 @@ body{
     box-sizing: border-box;
 }
 
+/* MODO OSCURO */
+ 
+/* Estableciendo variables */
+.cambiar-modo-oscuro{
+    --header: #455a64;
+    --white: #ffffff;
+    --greylight: #bdbdbd;
+    --aside: #546e7a;
+    --letra: #d7ccc8;
+}
 
-.container-global{
-    background-color: #ffb2dd;
+.cambiar-modo-claro{
+    --header: #bcbcbc;
+    --div: #9e9e9e;
+    --aside: #e0e0e0;
+    --letra: #8c7b75;
+    --greylight: #e2f1f8;
+    --white: #ffffff; 
+}
+
+
+/* Estableciendo propiedades a las pestañas */
+.cambiar-modo-claro .button-claro,
+.cambiar-modo-oscuro .button-nocturno{
+  display: flex;
+}
+
+.cambiar-modo-claro .button-claro,
+.cambiar-modo-oscuro     .button-nocturno{ 
+  display: none;
+}
+
+
+/* ESTILOS AL PROYECTO */
+
+
+.container-global{     
     width: 100%;
 }
 
+/* ESTILOS AL HEADER */
 .box-inicial {
-    background-color: #b64fc8;
+    background-color:var(--header);
     height: 20vh;
     display: flex;
     text-align:center;
     flex-direction: column;
 }
 
+.tittle-aside{
+    color: var(--letra);
+}
+
 .tittle-generador {
     font-family: 'Yusei Magic', sans-serif;
-    color: #ffffff;
+    color: var(--letra);
 }
 
 
-.button-image .button-text .button-nocturno{
+.button-image{
+    background-color: var(--header);
+    color: var(--white);
+}
+
+.button-text{
+    background-color: var(--header);
+    color: var(--white);
+}
+
+.button-claro{
+    background-color: var(--header);
+    color: var(--white);
+}
+
+
+.button-image, .button-text, .button-nocturno,   .button-claro{
     justify-content: space-around;
-    margin: 5px 10px; 
-    /* outline: none; 
-    border: transparent;
-    background-color: #b64fc8; */
-}
-/* 
-.pestaña-texto .pestaña-imagen{
-    text-decoration: none;
-    border: transparent;
-    background-color: #b64fc8;
-} */
+    margin: 5px 20px;    
 
-/* *****************Sector Hover***************** */
-
-.button-image:hover{
- background-color: #ff79ff;
- color: white;
-}
-.button-text:hover{
-    background-color: #ff79ff;
-    color: white; 
-}
-
-.button-nocturno:hover{
-    background-color: #ff79ff;
-    color: white; 
 }
 
 
-
-/* ***********CONTAINER STYLE******************* */
-
-
+/************CONTAINER DE IMAGEN-URL********************/
+.containerTextTopBottonText{
+    background-color: var(--greylight);
+} 
 
 .div-container{
     width: 40vw;
-    height: 80vh;
-    margin: 25px auto;
-
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .p-text{
     display: flex;
-    background-color: #805acb;
+    background-color: var(--white);
     justify-content: center;
     align-items: center;
     height: 8vh;
@@ -81,13 +112,22 @@ body{
     width: 40vw;
     height: 300px;
     background-color: black;
-} 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ESTILOS PESTAÑA IMAGEN */
+.section-image{
+    background-color: var (var(--section-image));
+}
+
 
 .p-text-botton{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #8c9eff;
+    background-color: var(--white);
     height: 8vh;
     margin: 0px;
 }
@@ -102,22 +142,25 @@ body{
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
-    background-color: #c94f7c;
-    
+    background-color: #2e7d32;
 }
 
 .letra-button{
-    font-family: 'Hachi Maru Pop', cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/*******************************************/
+/* *****************ASIDE****************** */
+.icon-cruz{
+    display: flex;
+    height: 20px;
+    margin: 10px;
+}
 .box-aside{
     width: 20%;
     display: flex;
     justify-content: center;
-    background-color: #ff8a80;
+    background-color: var(--aside);
 }
-
 
 .tittle-aside{
     display: flex;
@@ -125,7 +168,8 @@ body{
 }
 
 .tittle-box-aside{
-    margin-left: 10px;
+    margin: auto;
+    padding: 5px;
 }
 
 .panel-control-input{
@@ -134,14 +178,12 @@ body{
     height: 25px;
 }
 
-
 .box-aside-color-select{
     display: flex;
     align-items: center;
     margin: 10px;
     border-radius: 10px;
 }
-
 
 .panel-control-column{
     width: 80%;
@@ -161,9 +203,65 @@ body{
     margin-bottom: 10px;
 }
 
+/* PARA REDONDEAR EL INPUT COLOR */
+.color-ffff > input[type='color']::-webkit-color-swatch-wrapper{
+        display: flex;
+        height: 36px;
+        border-radius: 5px;
+        padding: 8px 10px;
+        display: flex;
+        box-sizing: border-box;
+      }
 
-/********************TEXTO*************************/
+.color-ffff > input[type='color']::-webkit-color-swatch {
+        width: 18px;
+        max-width: 18px;
+        margin: 0;
+      }
+.color-ffff > input[type='color'] {
+        height: fit-content;
+        width: 100%;
+        padding: 0px;
+      }
 
-.pestañita-texto{
-    display: none
-};
+.color-ffff {
+        position: relative;
+        height: 30px;
+        display: flex;
+        background-color: #393e49;
+        border-radius: 5px;
+        cursor: pointer;
+        align-items: center;
+        padding-right: 5px;
+}
+
+.color-ffff {
+        position: relative;
+        height: 30px;
+        display: flex;
+        width: calc(50% - 5px);
+        margin-bottom: 12px;
+}
+
+/******************ESTILOS PARA PESTAÑA TEXTO***********************/
+
+.box-texto{
+    flex-direction: column;
+}
+
+.section-texto{
+    background-color: var(--section-texto);
+    display: none;
+}
+
+.box-article-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-texto{
+    display: flex;
+    justify-content: center;
+}
+
+

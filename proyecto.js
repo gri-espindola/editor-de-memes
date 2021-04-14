@@ -1,24 +1,48 @@
-const pestanaImagen = document.getElementById ('pestaña-imagen');
+const btnImagen = document.getElementById ('btn-imagen');
 
-const pestanitaImagen = document.getElementById ('pestañita-imagen');
+const solapaImagen= document.getElementById ('solapa-imagen');
 
-const pestanaTexto = document.getElementById ('pestaña-texto');
+const btnTexto = document.getElementById ('btn-texto');
 
-const pestanitaTexto = document.getElementById ('pestañita-texto');
+const solapaTexto = document.getElementById ('solapa-texto');
 
-pestanaImagen.addEventListener('click', () => {
-    pestanitaImagen.style.display = 'block'
-    pestanitaTexto.style.display = 'none'
+btnImagen.addEventListener('click', () => {
+    solapaImagen.style.display = 'block'
+    solapaTexto.style.display = 'none';
 });
 
-pestanaTexto.addEventListener('click', () => {
-    pestanitaTexto.style.display = 'block'
-    pestanitaImagen.style.display = 'none'
+btnTexto.addEventListener('click', () => {
+    solapaTexto.style.display = 'block'
+    solapaImagen.style.display = 'none'
 });
 
 // MODO NOCTURNO
 
-/* const modoNocturno = document.getElementById('modo-nocturno');
+const botonClaro = document.getElementById ('modo-claro');
 
-modoNocturno.addEventListener('click') */
+const botonOscuro = document.getElementById ('modo-oscuro');
+
+function cambiarModoClaro(){
+    document.body.classList.remove('cambiar-modo-oscuro');
+    document.body.classList.add('cambiar-modo-claro');
+};
+
+function cambioModoOscuro(){
+    document.body.classList.remove('cambiar-modo-claro');
+    document.body.classList.add('cambiar-modo-oscuro');
+}
+
+//URL
+
+const urlImagen = document.getElementById 
+('url-img-input'); 
+
+const divUrl = document.getElementById ('imagen-meme');
+
+urlImagen.addEventListener('keyup',() =>{
+    const url = urlImagen.value;
+    divUrl.style.backgroundImage = `url('${url}')`; 
+});
+
+
 
