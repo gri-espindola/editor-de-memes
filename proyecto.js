@@ -44,5 +44,192 @@ urlImagen.addEventListener('keyup',() =>{
     divUrl.style.backgroundImage = `url('${url}')`; 
 });
 
+//FONDO
+const fondoImg = document.getElementById ('fondo-img');
+const propFondoImg = document.getElementById ('prop-fondo-img');
 
+fondoImg.addEventListener ('input', () =>{
+    const colorFondo = fondoImg.value;
+    divUrl.style.backgroundColor = colorFondo;
+})
+
+propFondoImg.addEventListener ('change', () =>{
+    divUrl.style.backgroundBlendMode = propFondoImg.value;
+})
+
+//filtros
+
+//llamando los input filtros
+
+const filtroBrillo = document.getElementById ('filtro-brillo');
+const opacidad = document.getElementById ('opacidad');
+const contraste = document.getElementById ('contraste');
+const desenfoque = document.getElementById ('desenfoque');
+const escalaDeGrises = document.getElementById ('escala-de-grises');
+const sepia = document.getElementById ('sepia');
+const hue = document.getElementById ('hue');
+const saturado = document.getElementById ('saturado');
+const negativo = document.getElementById ('negativo');
+const restablecerFiltros = document.getElementById ('restablecer-filtros');
+
+console.log ({filtroBrillo, opacidad, contraste, desenfoque, escalaDeGrises, sepia, hue, saturado,negativo});
+
+const actualizarFiltros = ()=>{
+    divUrl.style.filter = `brightness(${filtroBrillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${escalaDeGrises.value}%) sepia(${sepia.value}) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
+}
+
+filtroBrillo.addEventListener('change', actualizarFiltros); 
+opacidad.addEventListener('change', actualizarFiltros);
+contraste.addEventListener('change', actualizarFiltros);
+desenfoque.addEventListener('change', actualizarFiltros);
+escalaDeGrises.addEventListener('change', actualizarFiltros);
+sepia.addEventListener('change', actualizarFiltros);
+hue.addEventListener('change', actualizarFiltros);
+saturado.addEventListener('change', actualizarFiltros);
+negativo.addEventListener('change', actualizarFiltros);
+
+restablecerFiltros.addEventListener('click',()=>{
+    filtroBrillo.value = 1;
+    opacidad.value = 1;
+    contraste.value = 100;
+    desenfoque.value = 0;
+    escalaDeGrises.value = 0;
+    sepia.value = 0;
+    hue.value = 0;
+    saturado.value = 100;
+    negativo.value = -1;
+    actualizarFiltros();
+})
+
+//Aplicando innetHTML a los input
+
+//LLAMANDO LOS INPUT DE TEXTO SUPERIOR E INFERIOR
+
+const textoSuperior = document.getElementById('texto-superior');
+const textoInferior = document.getElementById('texto-inferior');
+
+//LLAMANDO LOS PARRAFOS DEL DIV
+
+const pTextoSuperior = document.getElementById('p-texto-superior');
+const pTextoInferior = document.getElementById('p-texto-inferior');
+
+textoSuperior.addEventListener('input', ()=>{
+    pTextoSuperior.textContent = textoSuperior.value;
+});
+
+textoInferior.addEventListener('input', ()=>{
+    pTextoInferior.textContent = textoInferior.value;
+});
+
+//CHECKBOX
+
+const checkboxSuperior = document.getElementById('checkbox-superior');
+const checkboxInferior = document.getElementById('checkbox-inferior');
+
+checkboxSuperior.addEventListener ('click',()=>{
+    if (checkboxSuperior.checked){
+        pTextoSuperior.style.display = 'none'
+        textoSuperior.disabled = true;
+    }else{
+        pTextoSuperior.style.display ='flex'
+        textoSuperior.disabled = false;
+    }
+})
+
+checkboxInferior.addEventListener('click',()=>{
+    if (checkboxInferior.checked){
+        pTextoInferior.style.display = 'none'
+        textoInferior.disabled = true;
+    }else{
+        pTextoInferior.style.display = 'flex'
+        textoInferior.disabled = false;
+    }
+});
+
+//FUENTE TEXTO
+
+const fuentesTexto = document.getElementById('fuentes-texto');
+
+fuentesTexto.addEventListener ('input',()=>{
+    pTextoSuperior.style.fontFamily = fuentesTexto.value;
+    pTextoInferior.style.fontFamily = fuentesTexto.value;
+});
+
+//TAMAÑO DE TEXTO
+
+const fontSize = document.getElementById ('font-size');
+
+fontSize.addEventListener ('input',()=>{
+    pTextoSuperior.style.fontSize = `${fontSize.value}px`;
+    pTextoInferior.style.fontSize = `${fontSize.value}px`;
+});
+
+//alineación del texto
+
+const textLeft = document.getElementById('text-left');
+const textCenter = document.getElementById('text-center');
+const textRight = document.getElementById('text-right');
+
+textLeft.addEventListener('click', () =>{
+    pTextoSuperior.style.textAlign = 'left';
+    pTextoInferior.style.textAlign = 'left';
+});
+
+textCenter.addEventListener('click', () =>{
+    pTextoSuperior.style.textAlign = 'center';
+    pTextoInferior.style.textAlign = 'center';
+});
+
+textRight.addEventListener('click', () =>{
+    pTextoSuperior.style.textAlign = 'right';
+    pTextoInferior.style.textAlign = 'right';
+});
+
+
+//COLOR LETRA
+
+const colorLetra = document.getElementById('color-letra');
+const backgroundColor = document.getElementById('background-color');
+const spanColorLetra = document.getElementById('span-color-letra');
+const spanBackgroundColor = document.getElementById('span-background-color');
+
+colorLetra.addEventListener ('input', ()=>{
+    pTextoSuperior.style.color = colorLetra.value;
+    pTextoInferior.style.color = colorLetra.value;
+    spanColorLetra.textContent = `${colorLetra.value}`;
+})
+
+// BACKGROUND COLOR
+
+backgroundColor.addEventListener('input', ()=>{
+    pTextoSuperior.style.backgroundColor = backgroundColor.value;
+    pTextoInferior.style.backgroundColor = backgroundColor.value;
+    spanBackgroundColor.textContent = `${backgroundColor.value}`;
+})
+
+//CHECKBOX TRANSPARENTE
+
+const checkboxTransparente = document.getElementById('fondo-transparente');
+
+checkboxTransparente.addEventListener ('change',()=>{
+    if(checkboxTransparente.checked){
+        divUrl.style.backgroundColor = "transparent";
+    }else{
+        divUrl.style.backgroundColor = "red";
+    }
+});
+        
+//BOTON DESCARGA
+
+const botonDescarga = document.getElementById('boton-descarga');
+
+
+botonDescarga.addEventListener("click",()=>{
+    domtoimage.toBlob(document.querySelector("#div-container-imagen")).then(function (blob) {
+        window.saveAs(blob, "my-node.png");
+      });
+})
+
+
+//text-shadow o text-stroke
 
