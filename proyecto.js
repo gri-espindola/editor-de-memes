@@ -1,9 +1,7 @@
+//LLAMANDO DEL DOM EL MAIN CONTAINER
 const btnImagen = document.getElementById ('btn-imagen');
-
 const solapaImagen= document.getElementById ('solapa-imagen');
-
 const btnTexto = document.getElementById ('btn-texto');
-
 const solapaTexto = document.getElementById ('solapa-texto');
 
 btnImagen.addEventListener('click', () => {
@@ -22,12 +20,12 @@ const botonClaro = document.getElementById ('modo-claro');
 
 const botonOscuro = document.getElementById ('modo-oscuro');
 
-function cambiarModoClaro(){
+const cambiarModoClaro = () =>{
     document.body.classList.remove('cambiar-modo-oscuro');
     document.body.classList.add('cambiar-modo-claro');
 };
 
-function cambioModoOscuro(){
+const cambioModoOscuro = () =>{
     document.body.classList.remove('cambiar-modo-claro');
     document.body.classList.add('cambiar-modo-oscuro');
 }
@@ -39,7 +37,7 @@ const urlImagen = document.getElementById
 
 const divUrl = document.getElementById ('imagen-meme');
 
-urlImagen.addEventListener('keyup',() =>{
+urlImagen.addEventListener('input',() =>{
     const url = urlImagen.value;
     divUrl.style.backgroundImage = `url('${url}')`; 
 });
@@ -61,7 +59,7 @@ propFondoImg.addEventListener ('change', () =>{
 
 //llamando los input filtros
 
-const filtroBrillo = document.getElementById ('filtro-brillo');
+const brillo = document.getElementById ('brillo');
 const opacidad = document.getElementById ('opacidad');
 const contraste = document.getElementById ('contraste');
 const desenfoque = document.getElementById ('desenfoque');
@@ -72,13 +70,11 @@ const saturado = document.getElementById ('saturado');
 const negativo = document.getElementById ('negativo');
 const restablecerFiltros = document.getElementById ('restablecer-filtros');
 
-console.log ({filtroBrillo, opacidad, contraste, desenfoque, escalaDeGrises, sepia, hue, saturado,negativo});
-
 const actualizarFiltros = ()=>{
-    divUrl.style.filter = `brightness(${filtroBrillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${escalaDeGrises.value}%) sepia(${sepia.value}) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
+    divUrl.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${escalaDeGrises.value}%) sepia(${sepia.value}) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
 }
 
-filtroBrillo.addEventListener('change', actualizarFiltros); 
+brillo.addEventListener('change', actualizarFiltros); 
 opacidad.addEventListener('change', actualizarFiltros);
 contraste.addEventListener('change', actualizarFiltros);
 desenfoque.addEventListener('change', actualizarFiltros);
@@ -89,7 +85,7 @@ saturado.addEventListener('change', actualizarFiltros);
 negativo.addEventListener('change', actualizarFiltros);
 
 restablecerFiltros.addEventListener('click',()=>{
-    filtroBrillo.value = 1;
+    brillo.value = 1;
     opacidad.value = 1;
     contraste.value = 100;
     desenfoque.value = 0;
@@ -114,14 +110,14 @@ const pTextoSuperior = document.getElementById('p-texto-superior');
 const pTextoInferior = document.getElementById('p-texto-inferior');
 
 textoSuperior.addEventListener('input', ()=>{
-    pTextoSuperior.textContent = textoSuperior.value;
+    pTextoSuperior.innerText = textoSuperior.value;
 });
 
 textoInferior.addEventListener('input', ()=>{
-    pTextoInferior.textContent = textoInferior.value;
+    pTextoInferior.innerText = textoInferior.value;
 });
 
-//CHECKBOX
+//CHECKBOX TEXTO
 
 const checkboxSuperior = document.getElementById('checkbox-superior');
 const checkboxInferior = document.getElementById('checkbox-inferior');
@@ -215,14 +211,14 @@ checkboxTransparente.addEventListener ('change',()=>{
     if(checkboxTransparente.checked){
         divUrl.style.backgroundColor = "transparent";
     }else{
-        divUrl.style.backgroundColor = "red";
+        divUrl.style.backgroundColor = "black"; //ver esto
     }
 });
         
+
 //BOTON DESCARGA
 
 const botonDescarga = document.getElementById('boton-descarga');
-
 
 botonDescarga.addEventListener("click",()=>{
     domtoimage.toBlob(document.querySelector("#div-container-imagen")).then(function (blob) {
@@ -230,6 +226,23 @@ botonDescarga.addEventListener("click",()=>{
       });
 })
 
+//CONTORNO
 
-//text-shadow o text-stroke
+const contornoNone = document.getElementById ('contorno-none');
+const contornoClaro = document.getElementById ('contorno-claro');
+const contornoOscuro = document.getElementById ('contorno-oscuro');
 
+/* contornoNone.addEventListener ('click', () =>{
+    pTextoSuperior.style.border = "none";
+    pTextoInferior.style.border = "none";
+}) */
+
+contornoClaro.addEventListener ('change', () =>{
+    pTextoSuperior.style.border = "white";
+    pTextoInferior.style.border = "white";
+})
+
+contornoOscuro.addEventListener ('change', ()=>{
+    pTextoSuperior.style.border = "black";
+    pTextoInferior.style.border = "black";
+})

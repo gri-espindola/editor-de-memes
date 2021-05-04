@@ -282,14 +282,17 @@ body{
     color: var(--letra);
 }
 
-.input-text{
+.texta-text{
     margin-top: 10px;
     margin-bottom: 10px;
     width: -webkit-fill-available;
+    height: 15px;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .box-article-text{
-    margin-top: 10px;
+    margin-top: 8px;
     font-size: 15px;
 }
 
@@ -366,4 +369,20 @@ body{
 
 .interlineado-de-texto{
     margin-left: 20px;
+}
+
+/* RESPONSIVE */
+
+@media query and (min-width: 800px) {
+    .box-inicial{
+        z-index: 1;
+        flex-direction: column;
+    }
+    .containerTextTopBottonText{
+        flex-direction: column;
+
+    }
+    .box-aside{
+        display: none;
+    }
 }

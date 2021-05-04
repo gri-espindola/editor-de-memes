@@ -21,63 +21,62 @@
 <body class="cambiar-modo-oscuro">
     <div class="container-global">
 <!--*****************HEADER****************-->    
-
         <header class="box-inicial">
             <h1 class="tittle-generador">Generador de memes</h1>
             <nav class="button-gral">    
-            <button class="button-image" id="btn-imagen">
-                <i class="fas fa-image">
-                    Imagen
-                </i>
-            </button>
-            <button id="btn-texto" class="button-text">
-                <i class="fas fa-font">
-                    Texto
-                </i>
-            </button>
-            <button id="modo-oscuro" class="button-nocturno" onclick="cambioModoOscuro()">
-                <i class="fas fa-cloud-moon"></i> Modo nocturno</i>
-            </button>
-            <button id="modo-claro" class="button-claro" onclick="cambiarModoClaro()">
-                <i class="fas fa-cloud-moon"> Modo claro</i>
-            </button>
+                <button class="button-image" id="btn-imagen">
+                    <i class="fas fa-image">
+                        Imagen
+                    </i>
+                </button>
+                <button id="btn-texto" class="button-text">
+                    <i class="fas fa-font">
+                        Texto
+                    </i>
+                </button>
+                <button id="modo-oscuro" class="button-nocturno" onclick="cambioModoOscuro()">
+                    <i class="fas fa-cloud-moon"></i> Modo nocturno</i>
+                </button>
+                <button id="modo-claro" class="button-claro" onclick="cambiarModoClaro()">
+                    <i class="fas fa-cloud-moon"> Modo claro</i>
+                </button>
             </nav>
         </header>
 <!--**************CONTAINER PRINCIPAL**************-->    
-    
         <main class= "containerTextTopBottonText">
             <div class="div-container">
-                <div id="div-container-imagen"><p class="p-texto-superior" id="p-texto-superior">
-                    TOP TEXT
-                </p>
+                <div id="div-container-imagen"> 
+                        <p class="p-texto-superior" id="p-texto-superior">
+                        TOP TEXT
+                        </p>
                 
-                    <div class="imagen-meme" id="imagen-meme">                  </div>
-                <p class="p-texto-inferior" id="p-texto-inferior">
-                    BOTTON TEXT
-                </p>
-                </div>
+                    <div class="imagen-meme" id="imagen-meme"></div>
+                        <p class="p-texto-inferior" id="p-texto-inferior">
+                            BOTTON TEXT
+                        </p>
+                    </div>
                 <div class="button-descargar">
-                <Button class="letra-button">
-                    <i class="fas fa-download" id="boton-descarga">Descargar meme</i>
-                </Button>
+                    <button class="letra-button">
+                        <i class="fas fa-download" id="boton-descarga">Descargar meme</i>
+                    </button>
                 </div>
             </div>
         </main>
     </div>
     <!--********************PESTAÑA IMAGEN********************-->    
         
-        <aside class= "box-aside">
-            <button class="icon-cruz">
-                <i class="fas fa-times"></i>
-            </button>
-            <section id="solapa-imagen" class="section-image">
+    <aside class= "box-aside">
+                <button class="icon-cruz">
+                    <i class="fas fa-times"></i>
+                </button>
+        <section id="solapa-imagen" class="section-image">
                 <h2 class="tittle-aside">Imagen</h2>
-                <div>
-                    <h3 class="tittle-box-aside">URL</h3>
-                    <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de la imagen">
-                </div>
-                <div class="box-madre-imagen">
+                    <div>
+                        <h3 class="tittle-box-aside">URL</h3>
+                        <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de la imagen">
+                    </div>
 
+            <div class="box-madre-imagen">
                 <!-- FONDO -->    
                 <div>
                     <h3 class="tittle-box-aside">Fondo</h3>
@@ -103,7 +102,7 @@
                     <h3 class="tittle-box-aside">Filtros</h3>
                 <div class="box-aside-filtros">
                     <label for="brillo">Brillo</label>
-                    <input type="range" min="0" max="1" step="0.1" value="1" id="filtro-brillo">
+                    <input type="range" min="0" max="1" step="0.1" value="1" id="brillo">
                     <label for="opacidad">Opacidad</label>
                     <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1">
                     <label for="contraste">Contraste</label>
@@ -124,26 +123,25 @@
                 <div class="button-filtro">
                     <button class="restablecer-filtros" id="restablecer-filtros">Reestablecer Filtros</button>
                 </div>
-                </div>
-            </section>    
+            </div>
+        </section>    
     <!-- ***********************PESTAÑA TEXTO**************************** -->
     
-            <section id="solapa-texto" class="section-texto">
+        <section id="solapa-texto" class="section-texto">
                 <div class="box-texto">
                     <h3 class="title-texto">
                         Texto
                     <h3>
                     <article class="box-article-text">
                         <label for="text-superior">Texto superior</label>
-                        <input type="text" id="texto-superior"
-                        placeholder="TOP TEXT" class="input-text">
+                        <textarea type="text" name="" id="texto-superior" cols="30" rows="10" placeholder="TOP TEXT" class="texta-text"></textarea>
                         <br>
                         <input type="checkbox" name="text-superior" id="checkbox-superior">
                         <label for="" class="checkbox-text">Sin texto superior</label>
                     </article>
                     <article class="box-article-text">
                         <label for="text-superior">Texto inferior</label>
-                        <input type="text" id="texto-inferior" placeholder="BOTTON TEXT" class="input-text">
+                        <textarea type="text" name="" id="texto-inferior" cols="30" rows="10" placeholder="BOTTON TEXT" class="texta-text"></textarea>
                         <br>
                         <input type="checkbox" item id="checkbox-inferior" name="text-superior">
                         <label for="" class="checkbox-text">Sin texto inferior</label>
@@ -151,7 +149,7 @@
                     <article>
                         <!-- FUENTES -->
                         <h3 class="title-fuente">Fuente</h3>
-                        <div class="h3-aside-texto">
+                    <div class="h3-aside-texto">
                         <select name="fuentes" id="fuentes-texto" class="fuentes-texto">
                             <option value="Arial">Arial</option>
                             <option value="Algerian">Algerian</option>
@@ -164,69 +162,69 @@
 
                             <!-- TAMAÑO LETRA -->
                         </select>
-                        <label for="tamaño-letra"></label>
-                        <input type="number" id="font-size" value="40" min="10" max="50" class="font-size">
+                            <label for="tamaño-letra"></label>
+                            <input type="number" id="font-size" value="40" min="10" max="50" class="font-size">
                     </div>
 
 
                             <!-- ALINEACIÓN DE BOTONES -->
                         <div class="botones-alineacion">
-                        <button id="text-left" class="button-aling">
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                        <button id="text-center" class="button-aling">
-                            <i class="fas fa-align-center"></i>
-                        </button>
-                        <button id="text-right" class="button-aling">
-                            <i class="fas fa-align-right"></i>
-                        </button>
+                            <button id="text-left" class="button-aling">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button id="text-center" class="button-aling">
+                                <i class="fas fa-align-center"></i>
+                            </button>
+                            <button id="text-right" class="button-aling">
+                                <i class="fas fa-align-right"></i>
+                            </button>
                         </div>
 
                         <!-- COLORES -->
                         <div class="box-colores">
-                        <label for="color-letra">Color</label>
-                        <input type="color" id="color-letra" value="#00000" aria-label="Color de texto">
-                        <span id="span-color-letra">#00000</span>
+                            <label for="color-letra">Color</label>
+                            <input type="color" id="color-letra" value="#00000" aria-label="Color de texto">
+                            <span id="span-color-letra">#00000</span>
                         </div>
                         <div class="box-colores">
-                        <label for="color-fondo">Fondo</label>
-                        <input type="color" id="background-color" value="#FFFFF" aria-label="Color de fondo de texto">
-                        <span id="span-background-color">#FFFFF</span>
+                            <label for="color-fondo">Fondo</label>
+                            <input type="color" id="background-color" value="#FFFFF" aria-label="Color de fondo de texto">
+                            <span id="span-background-color">#FFFFF</span>
                         </div>
                         <div class="box-colores">
-                        <input type="checkbox" name="checkbox-transparente" id="fondo-transparente">
-                        <label for="" id="input-transparente" class="checkbox-text">Fondo transparente</label>
+                            <input type="checkbox" name="checkbox-transparente" id="fondo-transparente">
+                            <label for="" id="input-transparente" class="checkbox-text">Fondo transparente</label>
                         </div>
 
                         <!-- CONTORNO -->
                         
                         <h3 class="h3-aside-texto">Contorno</h3>
-                        <div class="box-contorno">
-                        <button>Ninguno</button>
-                        <button>Claro</button>
-                        <button>Oscuro</button>
-                        </div>
+                            <div class="box-contorno">
+                                <button class="contorno-none">Ninguno</button>
+                                <button class="contorno-claro">Claro</button>
+                                <button class="contorno-oscuro">Oscuro</button>
+                            </div>
 
                         <!-- INTERLINEADO -->
-                        <div class="box-interlineado">
-                        <label for="espaciado-de-texto">Espaciado</label>
-                        <input type="number"  id="espaciado-de-texto" class="espaciado-de-texto" value="35" min="5" max="55">
-                        </div>
+                            <div class="box-interlineado">
+                                <label for="espaciado-de-texto">Espaciado</label>
+                                <input type="number"  id="espaciado-de-texto" class="espaciado-de-texto" value="35" min="5" max="55">
+                            </div>
 
-                        <div class="box-interlineado">
-                        <label for="Interlineado-de-texto">Interlineado</label>
-                        <select name="Interlineado-de-texto" class="interlineado-de-texto" id="Interlineado-de-texto">
-                        </div>    
-                            <option value="0.8">0.8</option>
-                            <option value="1.0">1.0</option>
-                            <option value="1.2">1.2</option>
-                            <option value="1.5">1.5</option>
-                            <option value="2.0">2.0</option>
-                        </select>
+                            <div class="box-interlineado">
+                                <label for="Interlineado-de-texto">Interlineado</label>
+                                <select name="Interlineado-de-texto" class="interlineado-de-texto" id="Interlineado-de-texto">
+                            </div>    
+                                <option value="0.8">0.8</option>
+                                <option value="1.0">1.0</option>
+                                <option value="1.2">1.2</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2.0">2.0</option>
+                                </select>
                     </article>    
                 </div>
-            </section>
-        </aside>
+        </section>
+    </aside>
 
 
     
