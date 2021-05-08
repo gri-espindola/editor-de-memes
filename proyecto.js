@@ -232,17 +232,35 @@ const contornoNone = document.getElementById ('contorno-none');
 const contornoClaro = document.getElementById ('contorno-claro');
 const contornoOscuro = document.getElementById ('contorno-oscuro');
 
-/* contornoNone.addEventListener ('click', () =>{
-    pTextoSuperior.style.border = "none";
-    pTextoInferior.style.border = "none";
-}) */
-
-contornoClaro.addEventListener ('change', () =>{
-    pTextoSuperior.style.border = "white";
-    pTextoInferior.style.border = "white";
+contornoNone.addEventListener ('click', () =>{
+    pTextoSuperior.style.textShadow = "none";
+    pTextoInferior.style.textShadow = "none";
 })
 
-contornoOscuro.addEventListener ('change', ()=>{
-    pTextoSuperior.style.border = "black";
-    pTextoInferior.style.border = "black";
+contornoClaro.addEventListener ('click', () =>{
+    pTextoSuperior.style.textShadow = "rgb(255 255 255) 2px 2px, rgb(255 255 255) -2px 2px, rgb(255 255 255) 2px -2px, rgb(255 255 255) -2px -2px";
+    pTextoInferior.style.textShadow = "rgb(255 255 255) 2px 2px, rgb(255 255 255) -2px 2px, rgb(255 255 255) 2px -2px, rgb(255 255 255) -2px -2px";
 })
+
+contornoOscuro.addEventListener ('click', ()=>{
+    pTextoSuperior.style.textShadow = "rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px";
+    pTextoInferior.style.textShadow = "rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px";
+})
+
+//INTERLINEADO
+
+const espaciado = document.getElementById ('espaciado');
+
+espaciado.addEventListener('input', ()=>{
+    pTextoSuperior.style.padding = espaciado.value + 'px';
+    pTextoInferior.style.padding = espaciado.value + 'px';
+})
+
+//INTERLINEADO 
+const interlineado = document.getElementById('interlineado');
+
+interlineado.addEventListener('input', ()=>{
+    pTextoSuperior.style.lineHeight = interlineado.value;
+    pTextoInferior.style.lineHeight = interlineado.value;
+})
+

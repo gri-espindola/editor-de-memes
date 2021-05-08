@@ -48,7 +48,6 @@ body{
 /* ESTILOS AL HEADER */
 .box-inicial {
     background-color:var(--header);
-    height: 20vh;
     display: flex;
     text-align:center;
     flex-direction: column;
@@ -369,16 +368,24 @@ body{
 
 /* RESPONSIVE */
 
-@media query and (min-width: 800px) {
-    .box-inicial{
-        z-index: 1;
-        flex-direction: column;
+@media (max-width: 900px) {
+    body{
+        height: auto;
     }
+
+    .box-inicial{
+        display: flex;
+        z-index: 1;
+    }
+
     .containerTextTopBottonText{
-        flex-direction: column;
+        display: block;
+        z-index: 3;
 
     }
     .box-aside{
-        display: none;
+        z-index: 2;
+        display: block;
+    
     }
 }
