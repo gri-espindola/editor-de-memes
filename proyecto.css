@@ -138,10 +138,9 @@ body{
 .button-descargar{
     position: relative;
     left: 38%;
-    width: 26%;
+    width: fit-content;
     margin-top: 20px;
     padding: 15px;
-    border-radius: 5px;
     background-color: var(--aside);
 }
 
@@ -159,11 +158,13 @@ body{
     margin: 10px;
 }
 .box-aside{
-    width: 20%;
-    display: flex;
     justify-content: center;
+}
+
+.div-aside{
+    width: 20%;
     background-color: var(--aside);
-    height: 100%;
+    /* height: 100%; */
 }
 
 .tittle-aside{
@@ -368,24 +369,38 @@ body{
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
-    body{
-        height: auto;
+@media (max-width: 500px) {
+    .div-aside{
+        display: none;
     }
 
-    .box-inicial{
+    .container-global{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        /* z-index: 3; */
+    }
+
+    .div-container{
+        width: 80%;
+    }
+
+    .imagen-meme{
+        width: 100%;
+    }
+
+    .button-gral{
         display: flex;
-        z-index: 1;
+        margin-bottom: 10px;
     }
 
-    .containerTextTopBottonText{
-        display: block;
-        z-index: 3;
-
+    .button-image, .button-text, .button-nocturno, .button-claro{
+        border: none;
     }
-    .box-aside{
-        z-index: 2;
-        display: block;
-    
+
+    .button-descargar{
+        display: flex;
+        justify-content: center;
     }
 }
