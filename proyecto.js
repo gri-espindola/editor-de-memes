@@ -3,10 +3,12 @@ const btnImagen = document.getElementById ('btn-imagen');
 const solapaImagen= document.getElementById ('solapa-imagen');
 const btnTexto = document.getElementById ('btn-texto');
 const solapaTexto = document.getElementById ('solapa-texto');
+const divAside = document.getElementById('div-aside');
 
 btnImagen.addEventListener('click', () => {
     solapaImagen.style.display = 'block'
     solapaTexto.style.display = 'none';
+    divAside.style.display = 'block'
 });
 
 btnTexto.addEventListener('click', () => {
@@ -54,6 +56,12 @@ fondoImg.addEventListener ('input', () =>{
 propFondoImg.addEventListener ('change', () =>{
     divUrl.style.backgroundBlendMode = propFondoImg.value;
 })
+
+//ICONO CRUZ
+
+const iconCruz = document.getElementById (icon-cruz);
+
+
 
 //filtros
 
@@ -263,4 +271,6 @@ interlineado.addEventListener('input', ()=>{
     pTextoSuperior.style.lineHeight = interlineado.value;
     pTextoInferior.style.lineHeight = interlineado.value;
 })
+
+
 

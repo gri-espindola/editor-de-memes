@@ -79,13 +79,18 @@ body{
     color: var(--white);
 }
 
-
-.button-image, .button-text, .button-nocturno,   .button-claro{
-    justify-content: space-around;
-    margin: 5px 20px;    
-
+.button-nocturno{
+    background-color: var(--header);
+    color: var(--white);
+    border: none;
 }
 
+
+.button-image, .button-text, .button-nocturno, .button-claro{
+    width: max-content;
+    margin: 10px;   
+
+}
 
 /************CONTAINER DE IMAGEN-URL********************/
 .containerTextTopBottonText{
@@ -152,10 +157,9 @@ body{
 }
 
 /* *****************ASIDE****************** */
-.icon-cruz{
-    display: none;
-    height: 20px;
+#icon-cruz{
     margin: 10px;
+    color: var(--letra);
 }
 .box-aside{
     justify-content: center;
@@ -374,12 +378,16 @@ body{
         display: none;
     }
 
+    .box-aside{
+        width: 100%;
+        
+    }
+
+
     .container-global{
         display: block;
         width: 100%;
         height: 100vh;
-        position: absolute;
-        /* z-index: 3; */
     }
 
     .div-container{
@@ -403,4 +411,15 @@ body{
         display: flex;
         justify-content: center;
     }
+
+    
+.button-image, .button-text, .button-nocturno, .button-claro{
+    margin-left: 5px;
 }
+
+    .button-gral{
+        justify-content: center;
+    }
+    
+}
+
