@@ -6,14 +6,16 @@ const solapaTexto = document.getElementById ('solapa-texto');
 const divAside = document.getElementById('div-aside');
 
 btnImagen.addEventListener('click', () => {
-    solapaImagen.style.display = 'block'
+    solapaImagen.style.display = 'block';
     solapaTexto.style.display = 'none';
-    divAside.style.display = 'block'
+    divAside.style.display = 'block';
 });
 
 btnTexto.addEventListener('click', () => {
-    solapaTexto.style.display = 'block'
-    solapaImagen.style.display = 'none'
+    solapaTexto.style.display = 'block';
+    solapaImagen.style.display = 'none';
+    divAside.style.display = 'block';
+
 });
 
 // MODO NOCTURNO
@@ -56,12 +58,6 @@ fondoImg.addEventListener ('input', () =>{
 propFondoImg.addEventListener ('change', () =>{
     divUrl.style.backgroundBlendMode = propFondoImg.value;
 })
-
-//ICONO CRUZ
-
-const iconCruz = document.getElementById (icon-cruz);
-
-
 
 //filtros
 
@@ -273,4 +269,14 @@ interlineado.addEventListener('input', ()=>{
 })
 
 
+//ICONO CRUZ
 
+//llamando al icono cruz
+
+
+const iconCruz = document.getElementById ('icon-cruz');
+
+
+iconCruz.addEventListener ('click', ()=>{
+    divAside.style.display = 'none';
+})

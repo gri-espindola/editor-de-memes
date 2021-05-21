@@ -141,11 +141,12 @@ body{
 }
 
 .button-descargar{
-    position: relative;
-    left: 38%;
+    /* position: relative;
+    left: 38%; */
     width: fit-content;
     margin-top: 20px;
     padding: 15px;
+    margin-left: 35%;
     background-color: var(--aside);
 }
 
@@ -160,6 +161,7 @@ body{
 #icon-cruz{
     margin: 10px;
     color: var(--letra);
+    display: none;
 }
 .box-aside{
     justify-content: center;
@@ -373,16 +375,27 @@ body{
 
 /* RESPONSIVE */
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .div-aside{
         display: none;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
     }
 
     .box-aside{
-        width: 100%;
-        
+        width: 100%;        
     }
 
+    .box-texto {
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+
+    .title-texto{
+        margin-bottom: 0px;
+    }
 
     .container-global{
         display: block;
@@ -408,8 +421,7 @@ body{
     }
 
     .button-descargar{
-        display: flex;
-        justify-content: center;
+        margin-left: 25%;
     }
 
     
@@ -420,6 +432,11 @@ body{
     .button-gral{
         justify-content: center;
     }
-    
+
+    #icon-cruz{
+        display: block;
+    }
+     
 }
+
 
