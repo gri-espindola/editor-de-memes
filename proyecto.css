@@ -141,20 +141,15 @@ body{
 }
 
 .button-descargar{
-    /* position: relative;
-    left: 38%; */
     width: fit-content;
     margin-top: 20px;
     padding: 15px;
     margin-left: 35%;
     background-color: var(--aside);
-}
-
-.letra-button{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: var(--aside);
     color: var(--letra);
     border: 0px;
+    cursor: pointer;
 }
 
 /* *****************ASIDE****************** */
@@ -440,3 +435,18 @@ body{
 }
 
 
+/* PONIENDO HOVER A LOS BOTONES */
+
+.button-image , .button-nocturno, .button-text, .button-claro, .restablecer-filtros{
+    cursor: pointer;
+    letter-spacing: .3rem;
+    font-weight: 700;
+}
+
+.button-image:hover , .button-text:hover, .button-claro:hover, .button-nocturno:hover, .button-descargar:hover{
+    background-color:gray;
+}
+
+.restablecer-filtros:hover{
+    background-color: darkslateblue;
+}
